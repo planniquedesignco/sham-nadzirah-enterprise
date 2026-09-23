@@ -269,7 +269,7 @@ async function ensureCollectionLoaded(c){
       const seen=new Set();
       const items=[];
       // The visible cover is already proven to exist by the browser, so include it immediately.
-      if(c.cover && await imageExists(c.cover)){seen.add(c.cover);items.push({src:c.cover,label:'Hidangan'})}
+      if(c.cover && await probe(c.cover)){seen.add(c.cover);items.push({src:c.cover,label:'Hidangan'})}
       const generic=await existingFrom(genericFoodPaths);
       for(const src of generic){if(!seen.has(src)){seen.add(src);items.push({src,label:'Hidangan'})}}
       // Load named dishes in their menu order.
