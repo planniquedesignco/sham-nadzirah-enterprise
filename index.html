@@ -76,7 +76,7 @@
 .header-logo{display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;min-width:0;position:relative}
 .header-logo img{width:auto!important;height:82px!important;max-width:190px!important;object-fit:contain!important;display:block!important;filter:drop-shadow(0 10px 18px rgba(49,56,45,.10));animation:logoFloat 4.8s ease-in-out infinite}
 .header-brandnote{display:flex;align-items:center;gap:14px;color:#2f4b3a;text-transform:uppercase;letter-spacing:.18em;font-size:10px;font-weight:800;white-space:nowrap}
-.header-brandnote:before{content:"";width:42px;height:1px;background:linear-gradient(90deg,transparent,#b96f54)}
+.header-brandnote:before{display:none!important;content:none!important}
 .header-steam{position:absolute;left:92px;top:6px;width:64px;height:72px;pointer-events:none;opacity:.55}
 .header-steam i{position:absolute;bottom:4px;width:2px;height:34px;border-radius:99px;background:linear-gradient(180deg,rgba(185,111,84,0),rgba(185,111,84,.35),rgba(185,111,84,0));filter:blur(.2px);animation:steamRise 4.2s ease-in-out infinite}
 .header-steam i:nth-child(1){left:8px;animation-delay:0s}.header-steam i:nth-child(2){left:28px;animation-delay:.9s}.header-steam i:nth-child(3){left:46px;animation-delay:1.8s}
@@ -153,6 +153,25 @@
   .gallery-thumbs{bottom:8px;max-width:calc(100vw - 16px);padding:5px 6px;gap:6px;border-radius:11px}
   .gallery-thumb{flex-basis:52px;width:52px;height:40px;border-radius:7px;padding:2px}
 }
+
+<style id="gallery-filmstrip-v6">
+/* Faster viewer + cleaner filmstrip */
+.header-brandnote:before{display:none!important;content:none!important}
+.gallery-thumbs{background:transparent!important;backdrop-filter:none!important;padding:0!important;gap:9px!important;bottom:18px!important;max-width:min(760px,calc(100vw - 150px))!important}
+.gallery-thumb{flex:0 0 74px!important;width:74px!important;height:48px!important;padding:0!important;border:0!important;border-radius:9px!important;background:transparent!important;opacity:.48!important;transform:scale(.94)!important;box-shadow:none!important;transition:opacity .2s ease,transform .2s ease,box-shadow .2s ease!important}
+.gallery-thumb img{border-radius:9px!important;width:100%!important;height:100%!important;object-fit:cover!important}
+.gallery-thumb:hover{opacity:.82!important;transform:scale(1)!important}
+.gallery-thumb.active{opacity:1!important;transform:scale(1.08)!important;box-shadow:0 0 0 2px rgba(255,255,255,.95),0 7px 18px rgba(0,0,0,.28)!important}
+.gallery-progress{display:none;position:absolute;left:50%;bottom:17px;transform:translateX(-50%);width:min(180px,48vw);height:3px;border-radius:99px;background:rgba(255,255,255,.18);overflow:hidden;z-index:7}
+.gallery-progress span{display:block;width:0;height:100%;border-radius:inherit;background:rgba(255,255,255,.9);transition:width .28s ease}
+.gallery-loading{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:11px;letter-spacing:.08em;text-transform:uppercase;pointer-events:none}
+@media(max-width:600px){
+  .gallery-thumbs{display:none!important}
+  .gallery-progress{display:block!important}
+  .gallery-lightbox{padding-bottom:38px!important}
+  .gallery-lightbox-stage{height:calc(100dvh - 104px)!important}
+}
+</style>
 </style>
 </head>
 <body>
@@ -193,7 +212,7 @@
 
 <section class="section" id="contact"><div class="wrap"><div class="section-head contact-head reveal"><div><div class="eyebrow">Hubungi & Pertanyaan</div><h2>Sedia untuk merancang majlis anda?</h2></div><p>Hubungi kami terus atau hantar maklumat majlis melalui WhatsApp.</p></div><div class="contact-grid"><div class="contact-card reveal"><h3>Hubungi & Media Sosial</h3><a class="contact-item" href="tel:+60174568422"><span class="icon">☎</span><div><b>Cik Insyirah</b><span>017-456 8422</span></div></a><a class="contact-item" href="tel:+60174110885"><span class="icon">☎</span><div><b>En. Sham</b><span>017-411 0885</span></div></a><a class="contact-item" href="https://www.tiktok.com/@shamnadzirah.cate" target="_blank" rel="noopener"><span class="icon">♪</span><div><b>TikTok</b><span>@shamnadzirah.cate</span></div></a><div class="contact-item"><span class="icon">f</span><div><b>Facebook</b><span>Sham Nadzirah</span></div></div><a class="contact-item" href="https://www.google.com/maps/search/?api=1&query=Jalan+Seruling+Emas+2+14200+Penang+Malaysia" target="_blank" rel="noopener"><span class="icon">⌖</span><div><b>Lokasi</b><span>Jalan Seruling Emas 2, 14200 Pulau Pinang, Malaysia</span></div></a><div class="location-box"><b>Waktu operasi</b><br>Isnin, Selasa, Khamis & Jumaat · 9:00 pagi – 6:00 petang<br>Rabu, Sabtu & Ahad · Tutup</div></div><form class="form-card reveal" id="enquiryForm"><h3>Pertanyaan Pantas</h3><p>Kongsikan butiran majlis anda dan kami akan sambung perbualan melalui WhatsApp.</p><div class="form-grid"><div class="field"><label>Nama anda</label><input id="name" placeholder="Nama" required></div><div class="field"><label>Nombor telefon</label><input id="phone" placeholder="01X-XXXXXXX" required></div><div class="field full"><label>Mesej</label><textarea id="message" placeholder="Nyatakan tarikh majlis, jumlah tetamu, lokasi dan pakej yang diminati"></textarea></div></div><button class="cta submit" type="submit">Hantar melalui WhatsApp</button></form></div></div></section>
 </main>
-<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true"><button class="gallery-close" id="galleryClose" type="button" aria-label="Tutup">×</button><button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Foto sebelumnya">‹</button><div class="gallery-caption" id="galleryCaption"></div><div class="gallery-lightbox-stage"><img id="galleryLightboxImage" src="" alt="Paparan galeri"></div><button class="gallery-nav next" id="galleryNext" type="button" aria-label="Foto seterusnya">›</button><div class="gallery-thumbs" id="galleryThumbs" aria-label="Pilihan foto"></div></div>
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true"><button class="gallery-close" id="galleryClose" type="button" aria-label="Tutup">×</button><button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Foto sebelumnya">‹</button><div class="gallery-caption" id="galleryCaption"></div><div class="gallery-lightbox-stage"><img id="galleryLightboxImage" src="" alt="Paparan galeri"></div><button class="gallery-nav next" id="galleryNext" type="button" aria-label="Foto seterusnya">›</button><div class="gallery-thumbs" id="galleryThumbs" aria-label="Pilihan foto"></div><div class="gallery-progress" id="galleryProgress" aria-hidden="true"><span></span></div></div>
 <footer><div class="wrap foot"><img src="assets/sham-nadzirah-logo.png" alt="Sham Nadzirah Enterprise"><p>Sham Nadzirah Enterprise · Pulau Pinang<br>Katering · Kanopi · Keperluan Majlis</p></div></footer>
 <a class="wa" href="https://wa.me/60174568422" target="_blank" rel="noopener" aria-label="WhatsApp Sham Nadzirah"><svg viewBox="0 0 32 32"><path d="M19.11 17.2c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.26s.97 2.62 1.11 2.8c.14.18 1.91 2.91 4.62 4.08.65.28 1.15.45 1.54.57.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32zM16.03 3.2c-7.04 0-12.76 5.73-12.76 12.77 0 2.25.59 4.45 1.71 6.39L3.16 29l6.8-1.78a12.72 12.72 0 0 0 6.06 1.54h.01c7.04 0 12.77-5.73 12.77-12.77 0-3.41-1.33-6.62-3.75-9.03A12.67 12.67 0 0 0 16.03 3.2zm0 23.4h-.01a10.57 10.57 0 0 1-5.39-1.48l-.39-.23-4.03 1.06 1.08-3.93-.25-.4a10.57 10.57 0 0 1-1.62-5.65c0-5.85 4.76-10.61 10.62-10.61a10.54 10.54 0 0 1 7.5 3.11 10.55 10.55 0 0 1 3.1 7.51c-.01 5.85-4.77 10.62-10.61 10.62z"/></svg></a>
 <script>
@@ -314,24 +333,32 @@ document.querySelectorAll('.gallery-view-tab').forEach(btn=>btn.addEventListener
 async function openCollection(i){
   const c=galleryCollections[i];
   if(!c)return;
-  const loaded=await ensureCollectionLoaded(c);
-  if(!loaded.length){
-    // Keep the category visible even before food photos are uploaded, but do not open an empty viewer.
-    return;
-  }
-  galleryVisible=loaded;
-  const coverPos=loaded.findIndex(x=>x.src===c.cover);
-  galleryIndex=coverPos>=0?coverPos:0;
+
+  // Open instantly with the visible cover so the click never feels stuck.
+  const firstSrc=c.cover||c.coverCandidates?.[0];
+  galleryVisible=firstSrc?[{src:firstSrc,label:c.title}]:[];
+  galleryIndex=0;
   galleryLightbox.classList.add('open');
   galleryLightbox.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
   renderGalleryThumbs();
   showGallery(c.title);
+
+  // Discover the remaining photos after the viewer is already open.
+  const loaded=await ensureCollectionLoaded(c);
+  if(loaded.length){
+    galleryVisible=loaded;
+    const coverPos=loaded.findIndex(x=>x.src===c.cover);
+    galleryIndex=coverPos>=0?coverPos:0;
+    renderGalleryThumbs();
+    showGallery(c.title);
+  }
 }
-const galleryLightbox=document.getElementById('galleryLightbox'),galleryLightboxImage=document.getElementById('galleryLightboxImage'),galleryCaption=document.getElementById('galleryCaption'),galleryThumbs=document.getElementById('galleryThumbs');
+const galleryLightbox=document.getElementById('galleryLightbox'),galleryLightboxImage=document.getElementById('galleryLightboxImage'),galleryCaption=document.getElementById('galleryCaption'),galleryThumbs=document.getElementById('galleryThumbs'),galleryProgress=document.getElementById('galleryProgress');
 function renderGalleryThumbs(){
-  galleryThumbs.innerHTML=galleryVisible.map((item,i)=>`<button type="button" class="gallery-thumb${i===galleryIndex?' active':''}" data-thumb-index="${i}" aria-label="Buka foto ${i+1}"><img src="${item.src}" alt="" loading="eager"></button>`).join('');
+  galleryThumbs.innerHTML=galleryVisible.map((item,i)=>`<button type="button" class="gallery-thumb${i===galleryIndex?' active':''}" data-thumb-index="${i}" aria-label="Buka foto ${i+1}"><img src="${item.src}" alt="" loading="lazy" decoding="async"></button>`).join('');
   galleryThumbs.querySelectorAll('.gallery-thumb').forEach(btn=>btn.addEventListener('click',()=>{galleryIndex=Number(btn.dataset.thumbIndex);showGallery(galleryCaption.textContent)}));
+  updateGalleryProgress();
 }
 function syncGalleryThumbs(){
   const thumbs=[...galleryThumbs.querySelectorAll('.gallery-thumb')];
@@ -339,9 +366,10 @@ function syncGalleryThumbs(){
   const active=thumbs[galleryIndex];
   if(active) active.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
 }
-function showGallery(title){const item=galleryVisible[galleryIndex];if(!item)return;galleryLightboxImage.src=item.src;galleryLightboxImage.alt=item.label;galleryCaption.textContent=title||item.label;syncGalleryThumbs()}
+function updateGalleryProgress(){if(!galleryProgress)return;const bar=galleryProgress.querySelector('span');if(!bar)return;const total=Math.max(1,galleryVisible.length);bar.style.width=((galleryIndex+1)/total*100)+'%'}
+function showGallery(title){const item=galleryVisible[galleryIndex];if(!item)return;galleryLightboxImage.src=item.src;galleryLightboxImage.alt=item.label;galleryCaption.textContent=title||item.label;syncGalleryThumbs();updateGalleryProgress()}
 function moveGallery(step){if(!galleryVisible.length)return;galleryIndex=(galleryIndex+step+galleryVisible.length)%galleryVisible.length;showGallery(galleryCaption.textContent)}
-function closeGallery(){galleryLightbox.classList.remove('open');galleryLightbox.setAttribute('aria-hidden','true');galleryLightboxImage.src='';galleryThumbs.innerHTML='';document.body.style.overflow=''}
+function closeGallery(){galleryLightbox.classList.remove('open');galleryLightbox.setAttribute('aria-hidden','true');galleryLightboxImage.src='';galleryThumbs.innerHTML='';if(galleryProgress)galleryProgress.querySelector('span').style.width='0';document.body.style.overflow=''}
 document.getElementById('galleryPrev').addEventListener('click',()=>moveGallery(-1));document.getElementById('galleryNext').addEventListener('click',()=>moveGallery(1));document.getElementById('galleryClose').addEventListener('click',closeGallery);galleryLightbox.addEventListener('click',e=>{if(e.target===galleryLightbox)closeGallery()});
 let galleryTouchX=0;galleryLightbox.addEventListener('touchstart',e=>{galleryTouchX=e.changedTouches[0].clientX},{passive:true});galleryLightbox.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-galleryTouchX;if(Math.abs(d)>45)moveGallery(d<0?1:-1)},{passive:true});
 document.addEventListener('keydown',e=>{if(!galleryLightbox.classList.contains('open'))return;if(e.key==='ArrowLeft')moveGallery(-1);if(e.key==='ArrowRight')moveGallery(1);if(e.key==='Escape')closeGallery()});
