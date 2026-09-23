@@ -103,6 +103,57 @@
 @media(max-width:900px){.gallery-category{aspect-ratio:4/3!important}}
 @media(max-width:600px){.gallery-category{aspect-ratio:4/3!important;width:100%!important;min-height:0!important}}
 </style>
+
+<style id="gallery-refine-v5">
+/* Gallery V5: clean fixed covers + desktop/mobile thumbnail viewer */
+.gallery-showcase{padding:64px 0 66px!important}
+.gallery-heading{margin-bottom:14px!important}
+.gallery-view-tabs{margin-bottom:20px!important}
+.gallery-categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.gallery-categories.is-single{grid-template-columns:minmax(0,560px)}
+.gallery-category{aspect-ratio:16/10!important;min-height:0!important;border-radius:22px!important;background:linear-gradient(135deg,#d9d0c2,#efe7dc)!important}
+.gallery-category img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+.gallery-category.no-photo{display:flex;align-items:flex-end;background:linear-gradient(135deg,#d9d0c2 0%,#f4eee6 62%,#d7e1d8 100%)!important}
+.gallery-category.no-photo:before{content:"";position:absolute;inset:auto -8% -30% auto;width:58%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(53,91,69,.18),rgba(53,91,69,0) 70%);border:0!important}
+.gallery-category.no-photo .gallery-open-icon{opacity:.55}
+.gallery-category-content{padding:20px!important}
+.gallery-category h3{font-size:clamp(22px,2vw,29px)!important;margin:0!important}
+.gallery-lightbox{padding:18px 18px 92px!important;flex-direction:column}
+.gallery-lightbox-stage{width:min(1180px,calc(100vw - 120px));height:calc(100vh - 170px);max-height:none!important}
+.gallery-lightbox-stage img{width:100%;height:100%;max-width:none!important;max-height:none!important;object-fit:contain!important;border-radius:12px!important;box-shadow:none!important}
+.gallery-caption{top:16px!important}
+.gallery-thumbs{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:6;display:flex;gap:8px;max-width:min(860px,calc(100vw - 120px));overflow-x:auto;padding:7px 8px;border-radius:14px;background:rgba(255,255,255,.10);backdrop-filter:blur(16px);scrollbar-width:none;scroll-snap-type:x proximity}
+.gallery-thumbs::-webkit-scrollbar{display:none}
+.gallery-thumb{flex:0 0 62px;width:62px;height:46px;padding:0;border:1px solid transparent;border-radius:9px;overflow:hidden;background:#1c2b22;opacity:.52;cursor:pointer;transition:opacity .2s ease,transform .2s ease,border-color .2s ease;scroll-snap-align:center}
+.gallery-thumb img{width:100%;height:100%;object-fit:cover;display:block;border-radius:0;box-shadow:none;max-width:none;max-height:none}
+.gallery-thumb:hover{opacity:.9;transform:translateY(-2px)}
+.gallery-thumb.active{opacity:1;border-color:rgba(255,255,255,.92)}
+.gallery-counter{display:none!important}
+@media(max-width:900px){
+  .gallery-categories,.gallery-categories.is-single{grid-template-columns:1fr 1fr;gap:12px}
+  .gallery-category{aspect-ratio:4/3!important}
+  .gallery-lightbox-stage{width:calc(100vw - 84px);height:calc(100vh - 154px)}
+  .gallery-thumbs{max-width:calc(100vw - 78px)}
+}
+@media(max-width:600px){
+  .gallery-showcase{padding:50px 0 52px!important}
+  .gallery-heading{margin-bottom:12px!important}
+  .gallery-view-tabs{gap:20px!important;margin-bottom:16px!important}
+  .gallery-categories,.gallery-categories.is-single{grid-template-columns:1fr!important;gap:12px!important}
+  .gallery-category{aspect-ratio:16/10!important;min-height:0!important;border-radius:18px!important}
+  .gallery-category-content{padding:15px!important}
+  .gallery-category h3{font-size:22px!important}
+  .gallery-open-icon{width:34px!important;height:34px!important;right:10px!important;top:10px!important}
+  .gallery-lightbox{padding:54px 8px 74px!important}
+  .gallery-lightbox-stage{width:100%;height:calc(100vh - 138px)}
+  .gallery-lightbox-stage img{border-radius:8px!important}
+  .gallery-nav{display:none!important}
+  .gallery-caption{top:10px!important;font-size:10px!important}
+  .gallery-close{top:8px!important;right:8px!important}
+  .gallery-thumbs{bottom:8px;max-width:calc(100vw - 16px);padding:5px 6px;gap:6px;border-radius:11px}
+  .gallery-thumb{flex-basis:48px;width:48px;height:38px;border-radius:7px}
+}
+</style>
 </head>
 <body>
 <header class="top-header">
@@ -142,7 +193,7 @@
 
 <section class="section" id="contact"><div class="wrap"><div class="section-head contact-head reveal"><div><div class="eyebrow">Hubungi & Pertanyaan</div><h2>Sedia untuk merancang majlis anda?</h2></div><p>Hubungi kami terus atau hantar maklumat majlis melalui WhatsApp.</p></div><div class="contact-grid"><div class="contact-card reveal"><h3>Hubungi & Media Sosial</h3><a class="contact-item" href="tel:+60174568422"><span class="icon">☎</span><div><b>Cik Insyirah</b><span>017-456 8422</span></div></a><a class="contact-item" href="tel:+60174110885"><span class="icon">☎</span><div><b>En. Sham</b><span>017-411 0885</span></div></a><a class="contact-item" href="https://www.tiktok.com/@shamnadzirah.cate" target="_blank" rel="noopener"><span class="icon">♪</span><div><b>TikTok</b><span>@shamnadzirah.cate</span></div></a><div class="contact-item"><span class="icon">f</span><div><b>Facebook</b><span>Sham Nadzirah</span></div></div><a class="contact-item" href="https://www.google.com/maps/search/?api=1&query=Jalan+Seruling+Emas+2+14200+Penang+Malaysia" target="_blank" rel="noopener"><span class="icon">⌖</span><div><b>Lokasi</b><span>Jalan Seruling Emas 2, 14200 Pulau Pinang, Malaysia</span></div></a><div class="location-box"><b>Waktu operasi</b><br>Isnin, Selasa, Khamis & Jumaat · 9:00 pagi – 6:00 petang<br>Rabu, Sabtu & Ahad · Tutup</div></div><form class="form-card reveal" id="enquiryForm"><h3>Pertanyaan Pantas</h3><p>Kongsikan butiran majlis anda dan kami akan sambung perbualan melalui WhatsApp.</p><div class="form-grid"><div class="field"><label>Nama anda</label><input id="name" placeholder="Nama" required></div><div class="field"><label>Nombor telefon</label><input id="phone" placeholder="01X-XXXXXXX" required></div><div class="field full"><label>Mesej</label><textarea id="message" placeholder="Nyatakan tarikh majlis, jumlah tetamu, lokasi dan pakej yang diminati"></textarea></div></div><button class="cta submit" type="submit">Hantar melalui WhatsApp</button></form></div></div></section>
 </main>
-<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true"><button class="gallery-close" id="galleryClose" type="button" aria-label="Tutup">×</button><button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Foto sebelumnya">‹</button><div class="gallery-caption" id="galleryCaption"></div><div class="gallery-lightbox-stage"><img id="galleryLightboxImage" src="" alt="Paparan galeri"></div><button class="gallery-nav next" id="galleryNext" type="button" aria-label="Foto seterusnya">›</button></div>
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true"><button class="gallery-close" id="galleryClose" type="button" aria-label="Tutup">×</button><button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Foto sebelumnya">‹</button><div class="gallery-caption" id="galleryCaption"></div><div class="gallery-lightbox-stage"><img id="galleryLightboxImage" src="" alt="Paparan galeri"></div><button class="gallery-nav next" id="galleryNext" type="button" aria-label="Foto seterusnya">›</button><div class="gallery-thumbs" id="galleryThumbs" aria-label="Pilihan foto"></div></div>
 <footer><div class="wrap foot"><img src="assets/sham-nadzirah-logo.png" alt="Sham Nadzirah Enterprise"><p>Sham Nadzirah Enterprise · Pulau Pinang<br>Katering · Kanopi · Keperluan Majlis</p></div></footer>
 <a class="wa" href="https://wa.me/60174568422" target="_blank" rel="noopener" aria-label="WhatsApp Sham Nadzirah"><svg viewBox="0 0 32 32"><path d="M19.11 17.2c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.26s.97 2.62 1.11 2.8c.14.18 1.91 2.91 4.62 4.08.65.28 1.15.45 1.54.57.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32zM16.03 3.2c-7.04 0-12.76 5.73-12.76 12.77 0 2.25.59 4.45 1.71 6.39L3.16 29l6.8-1.78a12.72 12.72 0 0 0 6.06 1.54h.01c7.04 0 12.77-5.73 12.77-12.77 0-3.41-1.33-6.62-3.75-9.03A12.67 12.67 0 0 0 16.03 3.2zm0 23.4h-.01a10.57 10.57 0 0 1-5.39-1.48l-.39-.23-4.03 1.06 1.08-3.93-.25-.4a10.57 10.57 0 0 1-1.62-5.65c0-5.85 4.76-10.61 10.62-10.61a10.54 10.54 0 0 1 7.5 3.11 10.55 10.55 0 0 1 3.1 7.51c-.01 5.85-4.77 10.62-10.61 10.62z"/></svg></a>
 <script>
@@ -190,26 +241,26 @@ const namedFoodPaths=foodItems.flatMap(item=>numberedPaths(item.slug,REGULAR_MAX
 const vipPaths=Array.from({length:27},(_,i)=>`assets/food/vip-majlis-${String(i+1).padStart(2,'0')}.jpg`);
 
 async function buildGallery(){
-  // VIP cover terus menggunakan fail pertama yang telah distandardkan.
-  const vipCover='assets/food/vip-majlis-01.jpg';
-  const foodCover=await firstWorking([
+  // Always show both categories on the landing page.
+  // Food uses food-01.jpg first; if that file is not present we try a few known real menu filenames.
+  const foodCandidates=[
     'assets/food/food-01.jpg',
     'assets/food/hidangan-01.jpg',
     ...foodItems.map(item=>`assets/food/${item.slug}-01.jpg`)
-  ]);
+  ];
+  const vipCover='assets/food/vip-majlis-01.jpg';
 
-  galleryCollections=[];
-  if(foodCover) galleryCollections.push({key:'food',title:'Hidangan',items:null,cover:foodCover,klass:'float-a'});
-  galleryCollections.push({key:'vip',title:'VIP & Pengantin',items:null,cover:vipCover,klass:'float-b'});
+  galleryCollections=[
+    {key:'food',title:'Hidangan',items:null,cover:foodCandidates[0],coverCandidates:foodCandidates,klass:'float-a'},
+    {key:'vip',title:'VIP & Pengantin',items:null,cover:vipCover,coverCandidates:[vipCover],klass:'float-b'}
+  ];
   renderGalleryCategories('all');
-  setupGalleryFloat();
 }
 
 async function ensureCollectionLoaded(c){
   if(c.items && c.items.length) return c.items;
   if(c.key==='vip'){
     if(!galleryCache.vip){
-      // VIP filenames are fixed in GitHub: 01-27. No probing/scanning required.
       galleryCache.vip=vipPaths.map(src=>({src,label:'VIP & Pengantin'}));
     }
     c.items=galleryCache.vip;
@@ -232,18 +283,64 @@ async function ensureCollectionLoaded(c){
   }
   return c.items||[];
 }
+
+function attachCoverFallbacks(){
+  galleryCategories.querySelectorAll('.gallery-category').forEach(card=>{
+    const idx=Number(card.dataset.galleryCategory);
+    const c=galleryCollections[idx];
+    const img=card.querySelector('img');
+    if(!c||!img)return;
+    let pos=Math.max(0,c.coverCandidates.indexOf(img.getAttribute('src')));
+    img.addEventListener('load',()=>{c.cover=img.getAttribute('src');card.classList.remove('no-photo')});
+    img.addEventListener('error',()=>{
+      pos+=1;
+      if(pos<c.coverCandidates.length){img.src=c.coverCandidates[pos];return;}
+      img.remove();
+      card.classList.add('no-photo');
+    });
+  });
+}
+
 function renderGalleryCategories(view='all'){
  const list=galleryCollections.filter(c=>view==='all'||c.key===view);
+ galleryCategories.classList.toggle('is-single',list.length===1);
  galleryCategories.innerHTML=list.map(c=>{const realIndex=galleryCollections.indexOf(c);return `<article class="gallery-category ${c.klass}" data-gallery-category="${realIndex}" tabindex="0" role="button" aria-label="Buka koleksi ${c.title}"><img src="${c.cover}" alt="${c.title}" loading="lazy"><span class="gallery-open-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 17 17 7M9 7h8v8"/></svg></span><div class="gallery-category-content"><h3>${c.title}</h3></div></article>`}).join('');
+ attachCoverFallbacks();
  galleryCategories.querySelectorAll('.gallery-category').forEach(card=>{const open=()=>openCollection(Number(card.dataset.galleryCategory));card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
  setupGalleryFloat();
 }
 document.querySelectorAll('.gallery-view-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.gallery-view-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderGalleryCategories(btn.dataset.galleryView)}));
-async function openCollection(i){const c=galleryCollections[i];if(!c)return;galleryVisible=[{src:c.cover,label:c.title}];galleryIndex=0;showGallery(c.title);galleryLightbox.classList.add('open');galleryLightbox.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';const loaded=await ensureCollectionLoaded(c);if(loaded.length){galleryVisible=loaded;const pos=loaded.findIndex(x=>x.src===c.cover);galleryIndex=pos>=0?pos:0;showGallery(c.title)}}
-const galleryLightbox=document.getElementById('galleryLightbox'),galleryLightboxImage=document.getElementById('galleryLightboxImage'),galleryCaption=document.getElementById('galleryCaption');
-function showGallery(title){const item=galleryVisible[galleryIndex];if(!item)return;galleryLightboxImage.src=item.src;galleryLightboxImage.alt=item.label;galleryCaption.textContent=title||item.label}
-function moveGallery(step){galleryIndex=(galleryIndex+step+galleryVisible.length)%galleryVisible.length;showGallery(galleryCaption.textContent)}
-function closeGallery(){galleryLightbox.classList.remove('open');galleryLightbox.setAttribute('aria-hidden','true');galleryLightboxImage.src='';document.body.style.overflow=''}
+async function openCollection(i){
+  const c=galleryCollections[i];
+  if(!c)return;
+  const loaded=await ensureCollectionLoaded(c);
+  if(!loaded.length){
+    // Keep the category visible even before food photos are uploaded, but do not open an empty viewer.
+    return;
+  }
+  galleryVisible=loaded;
+  const coverPos=loaded.findIndex(x=>x.src===c.cover);
+  galleryIndex=coverPos>=0?coverPos:0;
+  galleryLightbox.classList.add('open');
+  galleryLightbox.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  renderGalleryThumbs();
+  showGallery(c.title);
+}
+const galleryLightbox=document.getElementById('galleryLightbox'),galleryLightboxImage=document.getElementById('galleryLightboxImage'),galleryCaption=document.getElementById('galleryCaption'),galleryThumbs=document.getElementById('galleryThumbs');
+function renderGalleryThumbs(){
+  galleryThumbs.innerHTML=galleryVisible.map((item,i)=>`<button type="button" class="gallery-thumb${i===galleryIndex?' active':''}" data-thumb-index="${i}" aria-label="Buka foto ${i+1}"><img src="${item.src}" alt="" loading="lazy"></button>`).join('');
+  galleryThumbs.querySelectorAll('.gallery-thumb').forEach(btn=>btn.addEventListener('click',()=>{galleryIndex=Number(btn.dataset.thumbIndex);showGallery(galleryCaption.textContent)}));
+}
+function syncGalleryThumbs(){
+  const thumbs=[...galleryThumbs.querySelectorAll('.gallery-thumb')];
+  thumbs.forEach((t,i)=>t.classList.toggle('active',i===galleryIndex));
+  const active=thumbs[galleryIndex];
+  if(active) active.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+}
+function showGallery(title){const item=galleryVisible[galleryIndex];if(!item)return;galleryLightboxImage.src=item.src;galleryLightboxImage.alt=item.label;galleryCaption.textContent=title||item.label;syncGalleryThumbs()}
+function moveGallery(step){if(!galleryVisible.length)return;galleryIndex=(galleryIndex+step+galleryVisible.length)%galleryVisible.length;showGallery(galleryCaption.textContent)}
+function closeGallery(){galleryLightbox.classList.remove('open');galleryLightbox.setAttribute('aria-hidden','true');galleryLightboxImage.src='';galleryThumbs.innerHTML='';document.body.style.overflow=''}
 document.getElementById('galleryPrev').addEventListener('click',()=>moveGallery(-1));document.getElementById('galleryNext').addEventListener('click',()=>moveGallery(1));document.getElementById('galleryClose').addEventListener('click',closeGallery);galleryLightbox.addEventListener('click',e=>{if(e.target===galleryLightbox)closeGallery()});
 let galleryTouchX=0;galleryLightbox.addEventListener('touchstart',e=>{galleryTouchX=e.changedTouches[0].clientX},{passive:true});galleryLightbox.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-galleryTouchX;if(Math.abs(d)>45)moveGallery(d<0?1:-1)},{passive:true});
 document.addEventListener('keydown',e=>{if(!galleryLightbox.classList.contains('open'))return;if(e.key==='ArrowLeft')moveGallery(-1);if(e.key==='ArrowRight')moveGallery(1);if(e.key==='Escape')closeGallery()});
