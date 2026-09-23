@@ -173,6 +173,21 @@
 }
 </style>
 </style>
+
+<style id="premium-header-v6">
+/* Larger non-sticky brand header with richer, restrained motion */
+.header-inner{height:122px!important;gap:30px!important}
+.header-logo img{height:98px!important;max-width:220px!important}
+.header-brandnote{font-size:13px!important;letter-spacing:.20em!important;font-weight:850!important;position:relative;animation:brandNoteIn .9s cubic-bezier(.2,.75,.2,1) both}
+.header-brandnote:after{content:"";position:absolute;left:0;right:0;bottom:-12px;height:1px;background:linear-gradient(90deg,transparent,rgba(185,111,84,.7),transparent);transform:scaleX(.18);opacity:0;transition:.45s ease}
+.top-header:hover .header-brandnote:after{transform:scaleX(1);opacity:1}
+.header-logo{transition:transform .45s cubic-bezier(.2,.75,.2,1)}
+.top-header:hover .header-logo{transform:translateY(-2px) scale(1.018)}
+.top-header:after{height:2px!important;width:18%!important;opacity:.75}
+@keyframes brandNoteIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+@media(max-width:700px){.header-inner{height:92px!important;gap:14px!important}.header-logo img{height:72px!important;max-width:160px!important}.header-brandnote{font-size:9.5px!important;letter-spacing:.14em!important}.header-brandnote:after{bottom:-8px}}
+@media(max-width:460px){.header-inner{height:86px!important}.header-logo img{height:68px!important;max-width:145px!important}.header-brandnote{font-size:8.5px!important;line-height:1.45!important;max-width:170px!important}}
+</style>
 </head>
 <body>
 <header class="top-header">
