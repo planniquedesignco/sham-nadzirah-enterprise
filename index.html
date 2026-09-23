@@ -89,6 +89,19 @@
 @media(max-width:700px){.header-inner{height:78px!important}.header-logo img{height:62px!important;max-width:145px!important}.header-brandnote{font-size:8px;letter-spacing:.14em;gap:8px}.header-brandnote:before{width:20px}.header-steam{left:62px;top:1px;transform:scale(.82)}.hero{margin-top:-8px!important;padding-top:26px!important}}
 @media(max-width:460px){.header-brandnote{max-width:145px;white-space:normal;text-align:right;line-height:1.4}.header-logo img{height:58px!important}.header-inner{height:74px!important;gap:10px}}
 @media(prefers-reduced-motion:reduce){.header-logo img,.header-steam i,.top-header:after,.top-header:before{animation:none!important}}
+
+/* FINAL MOBILE + GALLERY POLISH */
+@media(max-width:600px){
+  .hero-badges{grid-template-columns:1fr!important;gap:10px!important;margin-top:22px!important}
+  .hero-badges .badge{border:1px solid var(--line)!important;border-left:1px solid var(--line)!important;border-radius:16px!important;background:rgba(255,255,255,.72)!important;padding:14px 15px!important;min-height:0!important}
+  .hero-badges .badge b{font-size:14px!important;margin-bottom:4px!important}
+  .hero-badges .badge span{font-size:10.5px!important;line-height:1.45!important}
+}
+.gallery-categories{align-items:stretch!important}
+.gallery-category{height:auto!important;min-height:0!important;aspect-ratio:16/10!important}
+.gallery-category img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+@media(max-width:900px){.gallery-category{aspect-ratio:4/3!important}}
+@media(max-width:600px){.gallery-category{aspect-ratio:4/3!important;width:100%!important;min-height:0!important}}
 </style>
 </head>
 <body>
@@ -144,20 +157,40 @@ const foodItems=[
  {name:'Set Buffet',slug:'set-buffet',type:'buffet'}
 ];
 const REGULAR_MAX_PHOTOS=8, VIP_MAX_PHOTOS=30;
-function probe(src){return new Promise(resolve=>{const i=new Image();i.onload=()=>resolve(src);i.onerror=()=>resolve(null);i.src=src})}
+function probe(src){return new Promise(resolve=>{const i=new Image();i.onload=()=>resolve(src);i.onerror=()=>resolve(null);i.decoding='async';i.src=src})}
 // Galeri kategori dinamik: hanya foto pertama dipaparkan di hadapan, koleksi penuh dibuka apabila diklik
 const galleryCategories=document.getElementById('galleryCategories');
 let galleryCollections=[],galleryVisible=[],galleryIndex=0;
-const galleryExts=['jpg','jpeg','png','webp'];
-function numberedFilesMulti(slug,max){const out=[];for(let i=1;i<=max;i++){const no=String(i).padStart(2,'0');galleryExts.forEach(ext=>out.push(`assets/food/${slug}-${no}.${ext}`))}return out}
-async function firstExistingForNumber(slug,num){const no=String(num).padStart(2,'0');for(const ext of galleryExts){const src=`assets/food/${slug}-${no}.${ext}`;const ok=await probe(src);if(ok)return ok}return null}
-async function loadSeries(slug,max){const out=[];for(let i=1;i<=max;i++){const src=await firstExistingForNumber(slug,i);if(src)out.push(src)}return out}
+const galleryExts=['jpg','jpeg','png','webp','JPG','JPEG','PNG','WEBP'];
+const galleryFolders=['assets/food','assets/images','assets/gallery','assets'];
+async function firstExistingForNumber(slug,num){
+  const nums=[String(num).padStart(2,'0'),String(num)];
+  for(const folder of galleryFolders){
+    for(const no of nums){
+      for(const ext of galleryExts){
+        const src=`${folder}/${slug}-${no}.${ext}`;
+        const ok=await probe(src);
+        if(ok)return ok;
+      }
+    }
+  }
+  return null
+}
+async function loadSeries(slug,max){
+  const out=[];
+  for(let i=1;i<=max;i++){
+    const src=await firstExistingForNumber(slug,i);
+    if(src)out.push(src);
+  }
+  return out
+}
 async function buildGallery(){
  const food=[];
- const genericFood=await loadSeries('food',30);
- genericFood.forEach(src=>food.push({src,label:'Hidangan'}));
+ const genericFood=[...(await loadSeries('food',30)),...(await loadSeries('hidangan',30))];
+ [...new Set(genericFood)].forEach(src=>food.push({src,label:'Hidangan'}));
  for(const item of foodItems){const files=await loadSeries(item.slug,REGULAR_MAX_PHOTOS);files.forEach(src=>food.push({src,label:item.name}))}
- const vip=(await loadSeries('vip-majlis',VIP_MAX_PHOTOS)).map(src=>({src,label:'VIP & Pengantin'}));
+ const vipRaw=[...(await loadSeries('vip-majlis',VIP_MAX_PHOTOS)),...(await loadSeries('vip',VIP_MAX_PHOTOS)),...(await loadSeries('vip-pengantin',VIP_MAX_PHOTOS))];
+ const vip=[...new Set(vipRaw)].map(src=>({src,label:'VIP & Pengantin'}));
  galleryCollections=[];
  if(food.length)galleryCollections.push({key:'food',title:'Hidangan',items:food,cover:food[0].src,klass:'float-a'});
  if(vip.length)galleryCollections.push({key:'vip',title:'VIP & Pengantin',items:vip,cover:vip[0].src,klass:'float-b'});
