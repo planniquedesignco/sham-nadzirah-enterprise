@@ -28,6 +28,44 @@
 
 @media(max-width:900px){.gallery-categories{gap:14px}.gallery-category{min-height:360px;border-radius:24px}.gallery-category-content{padding:22px}.gallery-category h3{font-size:28px}}
 @media(max-width:600px){.gallery-showcase{padding-top:54px!important;padding-bottom:58px!important}.gallery-categories{grid-template-columns:1fr;gap:14px}.gallery-category{min-height:300px;border-radius:22px;animation:none!important}.gallery-category-content{padding:18px}.gallery-category h3{font-size:25px}.gallery-category p{font-size:10.5px;max-width:245px}.gallery-count{font-size:9px;padding:8px 9px}.gallery-open-icon{right:14px;top:14px;width:38px;height:38px;border-radius:12px}.gallery-lightbox{padding:10px}.gallery-lightbox img{max-width:96vw;max-height:76vh;border-radius:11px}.gallery-nav{width:42px;height:42px;border-radius:12px}.gallery-nav.prev{left:7px}.gallery-nav.next{right:7px}.gallery-close{top:9px;right:9px;width:40px;height:40px}.gallery-caption{top:12px;font-size:10px}.gallery-counter{bottom:12px;font-size:9px}}
+
+/* CLEAN GALERI V4 */
+.gallery-showcase{padding:74px 0 80px!important;background:linear-gradient(180deg,#efe7dc 0%,#f4eee6 100%)!important}
+.gallery-heading{margin-bottom:18px}
+.gallery-heading .eyebrow{margin-bottom:8px}
+.gallery-heading h2{margin:0;font-size:clamp(34px,4.2vw,54px);line-height:1.02}
+.gallery-view-tabs{margin:0 0 22px!important;gap:26px!important}
+.gallery-view-tab{font-size:12px!important;padding:4px 0 10px!important}
+.gallery-categories{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}
+.gallery-category{aspect-ratio:16/10!important;min-height:0!important;border-radius:22px!important;box-shadow:0 14px 34px rgba(43,52,45,.09)!important;animation:none!important}
+.gallery-category-content{padding:18px 20px!important;display:block!important}
+.gallery-category h3{margin:0!important;font-size:clamp(22px,2vw,28px)!important;line-height:1.05!important}
+.gallery-category p,.gallery-count{display:none!important}
+.gallery-open-icon{width:36px!important;height:36px!important;border-radius:11px!important;right:14px!important;top:14px!important}
+.gallery-category:after{background:linear-gradient(180deg,transparent 54%,rgba(12,26,19,.72) 100%)!important}
+.gallery-caption{top:18px!important;font-size:11px!important;padding:7px 10px!important}
+.gallery-counter{display:none!important}
+.gallery-lightbox img{max-width:min(1240px,90vw)!important;max-height:86vh!important;width:auto!important;height:auto!important;object-fit:contain!important}
+@media(max-width:900px){
+  .gallery-showcase{padding:62px 0 68px!important}
+  .gallery-category{aspect-ratio:4/3!important}
+}
+@media(max-width:600px){
+  .gallery-showcase{padding:48px 0 54px!important}
+  .gallery-heading{margin-bottom:14px}
+  .gallery-heading h2{font-size:32px!important}
+  .gallery-view-tabs{margin-bottom:16px!important;gap:20px!important}
+  .gallery-view-tab{font-size:11px!important}
+  .gallery-categories{grid-template-columns:1fr!important;gap:12px!important}
+  .gallery-category{aspect-ratio:4/3!important;border-radius:18px!important}
+  .gallery-category-content{padding:15px 16px!important}
+  .gallery-category h3{font-size:22px!important}
+  .gallery-open-icon{width:34px!important;height:34px!important;right:11px!important;top:11px!important}
+  .gallery-lightbox{padding:8px!important}
+  .gallery-lightbox img{max-width:96vw!important;max-height:80vh!important;border-radius:10px!important}
+  .gallery-caption{top:10px!important;font-size:10px!important}
+}
+
 </style>
 </head>
 <body>
@@ -35,7 +73,7 @@
 <main>
 <section class="hero" id="home"><div class="wrap hero-grid"><div class="hero-copy reveal"><div class="eyebrow">Katering · Kanopi · Pulau Pinang</div><h1>Majlis lebih mudah, <span>hidangan lebih menyelerakan.</span></h1><p>Daripada majlis keluarga hingga kenduri berskala besar, pilih pakej katering, set buffet, dome VIP, lauk pengantin dan keperluan kanopi dalam satu tempat.</p><div class="hero-actions"><a class="cta" href="#packages">Lihat Pakej</a><a class="btn-ghost" href="#contact">Buat Pertanyaan</a></div><div class="hero-badges"><div class="badge"><b>200–1,000+ tetamu</b><span>Pilihan mengikut saiz majlis</span></div><div class="badge"><b>Katering + Kanopi</b><span>Makanan dan persiapan majlis</span></div><div class="badge"><b>WhatsApp Terus</b><span>Mudah untuk semak pakej dan tempahan</span></div></div></div><div class="hero-visual reveal"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=86" alt="Suasana majlis perkahwinan"></div></div></section>
 
-<section class="section food-section" id="menu"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">Hidangan Kami</div><h2>Sajian yang melengkapkan majlis.</h2></div><p>Pilihan hidangan, set buffet serta sajian VIP dan pengantin yang disusun kemas untuk setiap jenis majlis.</p></div><div class="food-tools reveal" id="foodTools"><button class="food-filter active" data-food-filter="all">Semua</button><button class="food-filter" data-food-filter="hidangan">Hidangan</button><button class="food-filter" data-food-filter="buffet">Set Buffet</button><button class="food-filter" data-food-filter="vip">VIP & Pengantin</button></div><div class="food-grid" id="foodGrid"></div></div></section>
+<section class="section gallery-showcase" id="gallery"><div class="gallery-orb gallery-orb-a"></div><div class="gallery-orb gallery-orb-b"></div><div class="wrap gallery-wrap"><div class="gallery-heading reveal"><div class="eyebrow">Galeri</div><h2>Hidangan & VIP</h2></div><div class="gallery-view-tabs reveal" id="galleryViewTabs"><button class="gallery-view-tab active" data-gallery-view="all">Semua</button><button class="gallery-view-tab" data-gallery-view="food">Hidangan</button><button class="gallery-view-tab" data-gallery-view="vip">VIP & Pengantin</button></div><div class="gallery-categories reveal" id="galleryCategories"></div></div></section>
 
 <section class="section" id="packages"><div class="wrap"><div class="section-head packages-head reveal"><div><div class="eyebrow">Pakej Katering</div><h2>Pilih ikut jumlah tetamu dan bajet.</h2></div><p>Tekan pada mana-mana pakej untuk melihat menu dan perkara yang disertakan.</p></div><div class="filters reveal"><button class="filter active" data-filter="all">Semua Pakej</button><button class="filter" data-filter="200-400">200–400 tetamu</button><button class="filter" data-filter="500-600">500–600 tetamu</button><button class="filter" data-filter="1000">1,000+ tetamu</button></div><div class="pkg-grid">
 <details class="pkg reveal" data-group="1000"><summary><div class="pkg-title"><div class="price">RM10.50<small>/seorang</small></div><div class="pkg-name"><b>Pakej Katering Berbaloi</b><span>Minimum 1,000 tetamu</span></div></div><div class="plus">+</div></summary><div class="pkg-body"><div class="pkg-body-grid"><div><h4>Menu</h4><ul><li>Nasi Minyak / Nasi Hujan Panas / Nasi Tomato</li><li>Nasi Putih (30%)</li><li>Ayam Masak Merah</li><li>Daging Kari / Kurma / Masak Hitam</li><li>Kerabu Tomato / Jelatah</li><li>Buah Oren</li></ul></div><div><h4>Termasuk</h4><ul><li>Air Oren, Air Sirap, Air Anggur & Teh Tarik</li><li>Cendol</li><li>2 Set Dome VIP</li><li>Kerusi dan meja untuk majlis dewan</li><li>4 set khemah untuk majlis rumah</li></ul></div></div></div></details>
@@ -54,14 +92,13 @@
 
 <section class="section canopy" id="canopy"><div class="wrap split"><div class="photo reveal"><img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1500&q=84" alt="Kanopi dan susun atur majlis"></div><div class="reveal"><div class="eyebrow">Kanopi & Peralatan</div><h2>Persiapan majlis yang lebih lengkap.</h2><p>Sewaan kanopi Arabian 18x18 disediakan bersama pilihan meja, kerusi, kipas, lampu serta warna alas meja dan scallop kanopi.</p><div class="mini-list"><div class="mini"><i>1</i><div><b>Kanopi Arabian 18x18</b><span>Sesuai untuk majlis rumah dan luar</span></div></div><div class="mini"><i>2</i><div><b>Meja & kerusi</b><span>Meja bulat, meja petak dan tempat duduk tetamu</span></div></div><div class="mini"><i>3</i><div><b>Lampu & kipas</b><span>Disertakan dalam pakej sewaan terpilih</span></div></div></div><div style="margin-top:18px"><a class="cta" href="#contact">Tanya Tentang Kanopi</a></div></div></div></section>
 
-<section class="section gallery-showcase" id="gallery"><div class="gallery-orb gallery-orb-a"></div><div class="gallery-orb gallery-orb-b"></div><div class="wrap gallery-wrap"><div class="section-head reveal"><div><div class="eyebrow">Galeri Majlis</div><h2>Hidangan dan suasana yang kami sediakan.</h2></div><p>Pilih koleksi untuk melihat foto sebenar. Klik untuk buka paparan penuh dan leret ke kiri atau kanan untuk melihat gambar seterusnya.</p></div><div class="gallery-view-tabs reveal" id="galleryViewTabs"><button class="gallery-view-tab active" data-gallery-view="all">Tunjuk Semua</button><button class="gallery-view-tab" data-gallery-view="food">Hidangan</button><button class="gallery-view-tab" data-gallery-view="vip">VIP & Pengantin</button></div><div class="gallery-categories reveal" id="galleryCategories"></div></div></section>
+
 
 <section class="section"><div class="wrap"><div class="reviews reveal"><div class="eyebrow" style="text-align:center">Pengalaman Majlis</div><h2 style="text-align:center">Servis yang mudah, kemas dan senang berurusan.</h2><p style="text-align:center;max-width:700px;margin:0 auto">Daripada pilihan menu hingga persiapan majlis, kami utamakan proses tempahan yang jelas dan mudah.</p><div class="why"><div>✓ Pelbagai pakej</div><div>✓ Pilihan ikut bajet</div><div>✓ Katering + kanopi</div><div>✓ Hubungan terus</div></div><div class="review-carousel" id="reviewCarousel"><div class="review-track" id="reviewTrack"><article class="review-card"><span class="review-tag">Tempahan</span><b>Senang nak discuss</b><p>Details majlis boleh bincang terus, jadi lebih mudah nak pilih pakej ikut jumlah tetamu dan bajet.</p></article><article class="review-card"><span class="review-tag">Hidangan</span><b>Makanan nampak kemas</b><p>Presentation tersusun dan sesuai untuk majlis keluarga, kenduri atau event yang lebih formal.</p></article><article class="review-card"><span class="review-tag">Service</span><b>Easy to communicate</b><p>Clear information and straightforward arrangement make the planning process easier from start to finish.</p></article><article class="review-card"><span class="review-tag">Majlis</span><b>Semua boleh settle sekali</b><p>Katering, kanopi, meja, kerusi dan beberapa keperluan majlis boleh dibincangkan dalam satu tempat.</p></article><article class="review-card"><span class="review-tag">Pakej</span><b>Banyak pilihan ikut bajet</b><p>Tak perlu ambil pakej yang terlalu besar. Boleh tengok pilihan yang lebih sesuai dengan keperluan majlis.</p></article><article class="review-card"><span class="review-tag">Arrangement</span><b>Neat and organised</b><p>The setup feels tidy and practical, especially when coordinating food service with the event arrangement.</p></article><article class="review-card"><span class="review-tag">VIP</span><b>Bahagian VIP nampak lebih eksklusif</b><p>Dome VIP dan lauk pengantin boleh disusun sebagai satu koleksi supaya senang tengok keseluruhan konsep.</p></article><article class="review-card"><span class="review-tag">Pertanyaan</span><b>Senang nak tanya dulu</b><p>Boleh semak pakej dan terus WhatsApp untuk bincang tarikh, jumlah pax dan perkara tambahan yang diperlukan.</p></article></div></div><div class="review-dots" id="reviewDots"></div></div></div></section>
 
 <section class="section" id="contact"><div class="wrap"><div class="section-head contact-head reveal"><div><div class="eyebrow">Hubungi & Pertanyaan</div><h2>Sedia untuk merancang majlis anda?</h2></div><p>Hubungi kami terus atau hantar maklumat majlis melalui WhatsApp.</p></div><div class="contact-grid"><div class="contact-card reveal"><h3>Hubungi & Media Sosial</h3><a class="contact-item" href="tel:+60174568422"><span class="icon">☎</span><div><b>Cik Insyirah</b><span>017-456 8422</span></div></a><a class="contact-item" href="tel:+60174110885"><span class="icon">☎</span><div><b>En. Sham</b><span>017-411 0885</span></div></a><a class="contact-item" href="https://www.tiktok.com/@shamnadzirah.cate" target="_blank" rel="noopener"><span class="icon">♪</span><div><b>TikTok</b><span>@shamnadzirah.cate</span></div></a><div class="contact-item"><span class="icon">f</span><div><b>Facebook</b><span>Sham Nadzirah</span></div></div><a class="contact-item" href="https://www.google.com/maps/search/?api=1&query=Jalan+Seruling+Emas+2+14200+Penang+Malaysia" target="_blank" rel="noopener"><span class="icon">⌖</span><div><b>Lokasi</b><span>Jalan Seruling Emas 2, 14200 Pulau Pinang, Malaysia</span></div></a><div class="location-box"><b>Waktu operasi</b><br>Isnin, Selasa, Khamis & Jumaat · 9:00 pagi – 6:00 petang<br>Rabu, Sabtu & Ahad · Tutup</div></div><form class="form-card reveal" id="enquiryForm"><h3>Pertanyaan Pantas</h3><p>Kongsikan butiran majlis anda dan kami akan sambung perbualan melalui WhatsApp.</p><div class="form-grid"><div class="field"><label>Nama anda</label><input id="name" placeholder="Nama" required></div><div class="field"><label>Nombor telefon</label><input id="phone" placeholder="01X-XXXXXXX" required></div><div class="field full"><label>Mesej</label><textarea id="message" placeholder="Nyatakan tarikh majlis, jumlah tetamu, lokasi dan pakej yang diminati"></textarea></div></div><button class="cta submit" type="submit">Hantar melalui WhatsApp</button></form></div></div></section>
 </main>
-<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true"><button class="gallery-close" id="galleryClose" type="button" aria-label="Tutup">×</button><button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Foto sebelumnya">‹</button><div class="gallery-caption" id="galleryCaption"></div><div class="gallery-lightbox-stage"><img id="galleryLightboxImage" src="" alt="Paparan galeri"><div class="gallery-counter" id="galleryCounter"></div></div><button class="gallery-nav next" id="galleryNext" type="button" aria-label="Foto seterusnya">›</button></div>
-<div class="vip-lightbox" id="vipLightbox" aria-hidden="true"><button class="vip-lightbox-close" id="vipLightboxClose" type="button" aria-label="Tutup">×</button><img id="vipLightboxImage" src="" alt="Foto VIP & Pengantin"></div>
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true"><button class="gallery-close" id="galleryClose" type="button" aria-label="Tutup">×</button><button class="gallery-nav prev" id="galleryPrev" type="button" aria-label="Foto sebelumnya">‹</button><div class="gallery-caption" id="galleryCaption"></div><div class="gallery-lightbox-stage"><img id="galleryLightboxImage" src="" alt="Paparan galeri"></div><button class="gallery-nav next" id="galleryNext" type="button" aria-label="Foto seterusnya">›</button></div>
 <footer><div class="wrap foot"><img src="assets/sham-nadzirah-logo.png" alt="Sham Nadzirah Enterprise"><p>Sham Nadzirah Enterprise · Pulau Pinang<br>Katering · Kanopi · Keperluan Majlis</p></div></footer>
 <a class="wa" href="https://wa.me/60174568422" target="_blank" rel="noopener" aria-label="WhatsApp Sham Nadzirah"><svg viewBox="0 0 32 32"><path d="M19.11 17.2c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.6-1.5-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.26s.97 2.62 1.11 2.8c.14.18 1.91 2.91 4.62 4.08.65.28 1.15.45 1.54.57.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.83-1.29.23-.63.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32zM16.03 3.2c-7.04 0-12.76 5.73-12.76 12.77 0 2.25.59 4.45 1.71 6.39L3.16 29l6.8-1.78a12.72 12.72 0 0 0 6.06 1.54h.01c7.04 0 12.77-5.73 12.77-12.77 0-3.41-1.33-6.62-3.75-9.03A12.67 12.67 0 0 0 16.03 3.2zm0 23.4h-.01a10.57 10.57 0 0 1-5.39-1.48l-.39-.23-4.03 1.06 1.08-3.93-.25-.4a10.57 10.57 0 0 1-1.62-5.65c0-5.85 4.76-10.61 10.62-10.61a10.54 10.54 0 0 1 7.5 3.11 10.55 10.55 0 0 1 3.1 7.51c-.01 5.85-4.77 10.62-10.61 10.62z"/></svg></a>
 <script>
@@ -76,46 +113,7 @@ const foodItems=[
  {name:'Set Buffet',slug:'set-buffet',type:'buffet'}
 ];
 const REGULAR_MAX_PHOTOS=8, VIP_MAX_PHOTOS=30;
-const foodGrid=document.getElementById('foodGrid'), foodTools=document.getElementById('foodTools'), menuSection=document.getElementById('menu');
 function probe(src){return new Promise(resolve=>{const i=new Image();i.onload=()=>resolve(src);i.onerror=()=>resolve(null);i.src=src})}
-function numberedFiles(slug,max){const a=[];for(let n=1;n<=max;n++)a.push(`assets/food/${slug}-${String(n).padStart(2,'0')}.jpg`);return a}
-async function buildFood(){
- const counts={hidangan:0,buffet:0,vip:0};
- for(const item of foodItems){
-  const loaded=(await Promise.all(numberedFiles(item.slug,REGULAR_MAX_PHOTOS).map(probe))).filter(Boolean);
-  if(!loaded.length) continue;
-  counts[item.type]+=loaded.length;
-  const card=document.createElement('article');card.className='food-card reveal';card.dataset.type=item.type;card.dataset.empty='0';
-  card.innerHTML=`<div class="food-media"><span class="food-count">${loaded.length} gambar</span>${loaded.map((src,i)=>`<img class="food-slide${i===0?' active':''}" src="${src}" alt="${item.name} ${i+1}" loading="lazy">`).join('')}${loaded.length>1?'<button class="food-arrow prev" type="button" aria-label="Gambar sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button><button class="food-arrow next" type="button" aria-label="Gambar seterusnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>':''}</div><div class="food-info"><h3>${item.name}</h3><span>Sham Nadzirah Enterprise</span></div>`;
-  let idx=0;const slides=()=>[...card.querySelectorAll('.food-slide')];
-  const show=n=>{const arr=slides();idx=(n+arr.length)%arr.length;arr.forEach((x,i)=>x.classList.toggle('active',i===idx))};
-  card.querySelector('.prev')?.addEventListener('click',()=>show(idx-1));card.querySelector('.next')?.addEventListener('click',()=>show(idx+1));
-  foodGrid.appendChild(card);
- }
- const vipLoaded=(await Promise.all(numberedFiles('vip-majlis',VIP_MAX_PHOTOS).map(probe))).filter(Boolean);
- if(vipLoaded.length){
-  counts.vip=vipLoaded.length;
-  const vip=document.createElement('article');vip.className='vip-collection reveal';vip.dataset.type='vip';vip.dataset.empty='0';
-  vip.innerHTML=`<div class="vip-heading"><div><h3>VIP & Pengantin</h3><p>Dome VIP, lauk pengantin dan susun atur sajian khas dalam satu koleksi.</p></div><span class="vip-total">${vipLoaded.length} gambar</span></div><div class="vip-grid">${vipLoaded.map((src,i)=>`<figure class="vip-photo" data-src="${src}"><img src="${src}" alt="VIP & Pengantin ${i+1}" loading="lazy"></figure>`).join('')}</div>`;
-  vip.querySelectorAll('.vip-photo').forEach(f=>f.addEventListener('click',()=>openVipLightbox(f.dataset.src)));
-  foodGrid.appendChild(vip);
- }
- document.querySelector('[data-food-filter="hidangan"]').hidden=!counts.hidangan;
- document.querySelector('[data-food-filter="buffet"]').hidden=!counts.buffet;
- document.querySelector('[data-food-filter="vip"]').hidden=!counts.vip;
- const hasAny=counts.hidangan+counts.buffet+counts.vip>0;
- document.querySelector('[data-food-filter="all"]').hidden=!hasAny;
- if(!hasAny){menuSection.style.display='none';return}
- applyFoodFilter('all');
- document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-}
-function applyFoodFilter(type){document.querySelectorAll('.food-card,.vip-collection').forEach(c=>{c.style.display=(type==='all'||c.dataset.type===type)?'block':'none'})}
-document.querySelectorAll('.food-filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.food-filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');applyFoodFilter(b.dataset.foodFilter)}));
-const vipLightbox=document.getElementById('vipLightbox'),vipLightboxImage=document.getElementById('vipLightboxImage'),vipLightboxClose=document.getElementById('vipLightboxClose');
-function openVipLightbox(src){vipLightboxImage.src=src;vipLightbox.classList.add('open');vipLightbox.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-function closeVipLightbox(){vipLightbox.classList.remove('open');vipLightbox.setAttribute('aria-hidden','true');vipLightboxImage.src='';document.body.style.overflow=''}
-vipLightboxClose.addEventListener('click',closeVipLightbox);vipLightbox.addEventListener('click',e=>{if(e.target===vipLightbox)closeVipLightbox()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVipLightbox()});
-
 // Galeri kategori dinamik: hanya foto pertama dipaparkan di hadapan, koleksi penuh dibuka apabila diklik
 const galleryCategories=document.getElementById('galleryCategories');
 let galleryCollections=[],galleryVisible=[],galleryIndex=0;
@@ -130,21 +128,21 @@ async function buildGallery(){
  for(const item of foodItems){const files=await loadSeries(item.slug,REGULAR_MAX_PHOTOS);files.forEach(src=>food.push({src,label:item.name}))}
  const vip=(await loadSeries('vip-majlis',VIP_MAX_PHOTOS)).map(src=>({src,label:'VIP & Pengantin'}));
  galleryCollections=[];
- if(food.length)galleryCollections.push({key:'food',title:'Hidangan',desc:'Pilihan menu dan sajian untuk majlis.',items:food,cover:food[0].src,klass:'float-a'});
- if(vip.length)galleryCollections.push({key:'vip',title:'VIP & Pengantin',desc:'Dome VIP, lauk pengantin dan susun atur sajian khas.',items:vip,cover:vip[0].src,klass:'float-b'});
+ if(food.length)galleryCollections.push({key:'food',title:'Hidangan',items:food,cover:food[0].src,klass:'float-a'});
+ if(vip.length)galleryCollections.push({key:'vip',title:'VIP & Pengantin',items:vip,cover:vip[0].src,klass:'float-b'});
  renderGalleryCategories('all');
  setupGalleryFloat();
 }
 function renderGalleryCategories(view='all'){
  const list=galleryCollections.filter(c=>view==='all'||c.key===view);
- galleryCategories.innerHTML=list.map(c=>{const realIndex=galleryCollections.indexOf(c);return `<article class="gallery-category ${c.klass}" data-gallery-category="${realIndex}" tabindex="0" role="button" aria-label="Buka koleksi ${c.title}"><img src="${c.cover}" alt="${c.title}" loading="lazy"><span class="gallery-open-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 17 17 7M9 7h8v8"/></svg></span><div class="gallery-category-content"><div><h3>${c.title}</h3><p>${c.desc}</p></div><span class="gallery-count">Lihat ${c.items.length} foto</span></div></article>`}).join('');
+ galleryCategories.innerHTML=list.map(c=>{const realIndex=galleryCollections.indexOf(c);return `<article class="gallery-category ${c.klass}" data-gallery-category="${realIndex}" tabindex="0" role="button" aria-label="Buka koleksi ${c.title}"><img src="${c.cover}" alt="${c.title}" loading="lazy"><span class="gallery-open-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 17 17 7M9 7h8v8"/></svg></span><div class="gallery-category-content"><h3>${c.title}</h3></div></article>`}).join('');
  galleryCategories.querySelectorAll('.gallery-category').forEach(card=>{const open=()=>openCollection(Number(card.dataset.galleryCategory));card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}})});
  setupGalleryFloat();
 }
 document.querySelectorAll('.gallery-view-tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.gallery-view-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderGalleryCategories(btn.dataset.galleryView)}));
 function openCollection(i){const c=galleryCollections[i];if(!c)return;galleryVisible=c.items;galleryIndex=0;showGallery(c.title);galleryLightbox.classList.add('open');galleryLightbox.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
-const galleryLightbox=document.getElementById('galleryLightbox'),galleryLightboxImage=document.getElementById('galleryLightboxImage'),galleryCounter=document.getElementById('galleryCounter'),galleryCaption=document.getElementById('galleryCaption');
-function showGallery(title){const item=galleryVisible[galleryIndex];if(!item)return;galleryLightboxImage.src=item.src;galleryLightboxImage.alt=item.label;galleryCounter.textContent=`${galleryIndex+1} / ${galleryVisible.length}`;galleryCaption.textContent=title||item.label}
+const galleryLightbox=document.getElementById('galleryLightbox'),galleryLightboxImage=document.getElementById('galleryLightboxImage'),galleryCaption=document.getElementById('galleryCaption');
+function showGallery(title){const item=galleryVisible[galleryIndex];if(!item)return;galleryLightboxImage.src=item.src;galleryLightboxImage.alt=item.label;galleryCaption.textContent=title||item.label}
 function moveGallery(step){galleryIndex=(galleryIndex+step+galleryVisible.length)%galleryVisible.length;showGallery(galleryCaption.textContent)}
 function closeGallery(){galleryLightbox.classList.remove('open');galleryLightbox.setAttribute('aria-hidden','true');galleryLightboxImage.src='';document.body.style.overflow=''}
 document.getElementById('galleryPrev').addEventListener('click',()=>moveGallery(-1));document.getElementById('galleryNext').addEventListener('click',()=>moveGallery(1));document.getElementById('galleryClose').addEventListener('click',closeGallery);galleryLightbox.addEventListener('click',e=>{if(e.target===galleryLightbox)closeGallery()});
@@ -169,7 +167,6 @@ buildGallery();
  addEventListener('resize',()=>{buildDots();update()});buildDots();update();restart();
 })();
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-buildFood();
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.pkg').forEach(p=>p.hidden=!(f==='all'||p.dataset.group===f))}));
 document.querySelectorAll('details.pkg').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)d.scrollIntoView({behavior:'smooth',block:'nearest'})}));
 document.getElementById('enquiryForm').addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('name').value.trim(),p=document.getElementById('phone').value.trim(),m=document.getElementById('message').value.trim();const text=`Salam Sham Nadzirah Enterprise, saya ingin membuat pertanyaan.\n\nNama: ${n}\nTelefon: ${p}\nButiran majlis: ${m}`;window.open('https://wa.me/60174568422?text='+encodeURIComponent(text),'_blank')});
