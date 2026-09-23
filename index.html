@@ -187,7 +187,7 @@ const genericFoodPaths=[
   ...numberedPaths('hidangan',30)
 ];
 const namedFoodPaths=foodItems.flatMap(item=>numberedPaths(item.slug,REGULAR_MAX_PHOTOS));
-const vipPaths=numberedPaths('vip-majlis',VIP_MAX_PHOTOS);
+const vipPaths=Array.from({length:27},(_,i)=>`assets/food/vip-majlis-${String(i+1).padStart(2,'0')}.jpg`);
 
 async function buildGallery(){
   // VIP cover terus menggunakan fail pertama yang telah distandardkan.
@@ -209,8 +209,8 @@ async function ensureCollectionLoaded(c){
   if(c.items && c.items.length) return c.items;
   if(c.key==='vip'){
     if(!galleryCache.vip){
-      const files=await existingFrom(vipPaths);
-      galleryCache.vip=files.map(src=>({src,label:'VIP & Pengantin'}));
+      // VIP filenames are fixed in GitHub: 01-27. No probing/scanning required.
+      galleryCache.vip=vipPaths.map(src=>({src,label:'VIP & Pengantin'}));
     }
     c.items=galleryCache.vip;
   }else{
