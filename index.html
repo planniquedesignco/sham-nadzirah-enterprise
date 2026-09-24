@@ -237,6 +237,54 @@
 </style>
 
 
+
+<style id="final-mobile-gallery-hero-fix">
+/* Cleaner one-column hero: header already carries the location/service line */
+.hero{padding:28px 0 42px!important;margin-top:0!important}
+.hero-grid{display:block!important}
+.hero-copy{max-width:900px;padding:12px 0 0!important}
+.hero h1{max-width:820px;margin-bottom:16px!important}
+.hero p{max-width:760px!important}
+.hero-badges{margin-top:24px!important}
+.hero-visual{display:none!important}
+
+/* Tighter vertical rhythm */
+.section{padding-top:66px!important;padding-bottom:66px!important}
+.gallery-showcase{padding-top:56px!important;padding-bottom:58px!important}
+.store-section{padding-top:60px!important;padding-bottom:60px!important}
+#packages{padding-top:66px!important;padding-bottom:66px!important}
+
+/* Viewer: only real gallery photos. Keep arrows + real thumbnail strip on all screen sizes. */
+.gallery-lightbox{padding:58px 68px 92px!important}
+.gallery-lightbox-stage{width:min(1180px,calc(100vw - 150px))!important;height:calc(100dvh - 160px)!important}
+.gallery-lightbox-stage>img{width:100%!important;height:100%!important;object-fit:contain!important;max-width:none!important;max-height:none!important}
+.gallery-caption{top:16px!important;max-width:70vw;text-align:center}
+.gallery-thumbs{display:flex!important;bottom:14px!important;max-width:min(780px,calc(100vw - 150px))!important}
+.gallery-nav{display:grid!important}
+
+@media(max-width:700px){
+  .hero{padding:20px 0 34px!important}
+  .hero-copy{padding-top:4px!important}
+  .hero h1{font-size:41px!important;line-height:.98!important;margin-bottom:14px!important}
+  .hero p{font-size:12.5px!important;line-height:1.62!important}
+  .hero-actions{margin-top:16px!important}
+  .hero-badges{margin-top:20px!important}
+  .section{padding-top:46px!important;padding-bottom:46px!important}
+  .gallery-showcase{padding-top:42px!important;padding-bottom:44px!important}
+  .store-section{padding-top:44px!important;padding-bottom:44px!important}
+  #packages{padding-top:48px!important;padding-bottom:48px!important}
+  .gallery-lightbox{padding:52px 10px 76px!important}
+  .gallery-lightbox-stage{width:100%!important;height:calc(100dvh - 132px)!important}
+  .gallery-lightbox-stage>img{width:100%!important;height:100%!important;object-fit:contain!important;border-radius:8px!important}
+  .gallery-nav{display:grid!important;width:38px!important;height:38px!important;border-radius:50%!important;background:rgba(0,0,0,.42)!important;top:50%!important}
+  .gallery-nav.prev{left:10px!important}.gallery-nav.next{right:10px!important}
+  .gallery-thumbs{display:flex!important;left:50%!important;bottom:12px!important;max-width:calc(100vw - 24px)!important;gap:6px!important;overflow-x:auto!important;padding:0!important}
+  .gallery-thumb{flex:0 0 50px!important;width:50px!important;height:36px!important;border-radius:7px!important;opacity:.58!important}
+  .gallery-thumb.active{transform:scale(1.04)!important;opacity:1!important}
+  .gallery-progress{display:none!important}
+  .gallery-caption{font-size:10px!important;top:11px!important;max-width:62vw!important}
+}
+</style>
 </head>
 <body>
 <header class="top-header">
@@ -249,7 +297,7 @@
   </div>
 </header>
 <main>
-<section class="hero" id="home"><div class="wrap hero-grid"><div class="hero-copy reveal"><div class="eyebrow">Katering · Kanopi · Pulau Pinang</div><h1>Majlis lebih mudah, <span>hidangan lebih menyelerakan.</span></h1><p>Daripada majlis keluarga hingga kenduri berskala besar, pilih pakej katering, set buffet, dome VIP, lauk pengantin dan keperluan kanopi dalam satu tempat.</p><div class="hero-actions"><a class="cta" href="#packages">Lihat Pakej</a><a class="btn-ghost" href="#contact">Buat Pertanyaan</a></div><div class="hero-badges"><div class="badge"><b>200–1,000+ tetamu</b><span>Pilihan mengikut saiz majlis</span></div><div class="badge"><b>Katering + Kanopi</b><span>Makanan dan persiapan majlis</span></div><div class="badge"><b>WhatsApp Terus</b><span>Mudah untuk semak pakej dan tempahan</span></div></div></div><div class="hero-visual reveal"><img src="assets/hero-katering.jpg" alt="Suasana majlis perkahwinan"></div></div></section>
+<section class="hero" id="home"><div class="wrap hero-grid"><div class="hero-copy reveal"><h1>Majlis lebih mudah, <span>hidangan lebih menyelerakan.</span></h1><p>Daripada majlis keluarga hingga kenduri berskala besar, pilih pakej katering, set buffet, dome VIP, lauk pengantin dan keperluan kanopi dalam satu tempat.</p><div class="hero-actions"><a class="cta" href="#packages">Lihat Pakej</a><a class="btn-ghost" href="#contact">Buat Pertanyaan</a></div><div class="hero-badges"><div class="badge"><b>200–1,000+ tetamu</b><span>Pilihan mengikut saiz majlis</span></div><div class="badge"><b>Katering + Kanopi</b><span>Makanan dan persiapan majlis</span></div><div class="badge"><b>WhatsApp Terus</b><span>Mudah untuk semak pakej dan tempahan</span></div></div></div></section>
 
 <section class="section gallery-showcase" id="gallery"><div class="gallery-orb gallery-orb-a"></div><div class="gallery-orb gallery-orb-b"></div><div class="wrap gallery-wrap"><div class="gallery-heading reveal"><div class="eyebrow">Galeri</div><h2>Hidangan & VIP</h2></div><div class="gallery-view-tabs reveal" id="galleryViewTabs"><button class="gallery-view-tab active" data-gallery-view="all">Semua</button><button class="gallery-view-tab" data-gallery-view="food">Hidangan</button><button class="gallery-view-tab" data-gallery-view="vip">VIP</button></div><div class="gallery-categories reveal" id="galleryCategories"></div></div></section>
 <section class="store-section" id="tentang"><div class="wrap store-grid"><div class="store-copy reveal"><div class="eyebrow">Di Sebalik Setiap Majlis</div><h2>Dari dapur kami, ke majlis anda.</h2><p>Sham Nadzirah Enterprise menyediakan katering, kanopi dan keperluan majlis dari Pulau Pinang untuk pelbagai saiz acara. Kedai dan operasi kami menjadi pusat persediaan sebelum setiap tempahan dibawa ke lokasi majlis.</p><div class="store-points"><span class="store-point">Katering</span><span class="store-point">Kanopi</span><span class="store-point">Dome VIP</span><span class="store-point">Lauk Pengantin</span></div><a class="cta" href="#contact">Hubungi Kami</a></div><div class="store-photo reveal"><img src="assets/store.jpg" alt="Premis Sham Nadzirah Enterprise" loading="lazy"><span class="store-badge">Sham Nadzirah Enterprise · Pulau Pinang</span></div></div></section>
@@ -303,7 +351,14 @@ let galleryCollections=[],galleryVisible=[],galleryIndex=0;
 const galleryCache={food:null,vip:null};
 
 function numberedPaths(slug,max){
-  return Array.from({length:max},(_,i)=>`assets/food/${slug}-${String(i+1).padStart(2,'0')}.jpg`);
+  const exts=['jpg','jpeg','png','webp'];
+  const paths=[];
+  for(const ext of exts) paths.push(`assets/food/${slug}.${ext}`);
+  for(let i=1;i<=max;i++){
+    const n=String(i).padStart(2,'0');
+    for(const ext of exts) paths.push(`assets/food/${slug}-${n}.${ext}`);
+  }
+  return paths;
 }
 
 async function firstWorking(paths){
@@ -323,7 +378,7 @@ const genericFoodPaths=[
   ...numberedPaths('hidangan',30)
 ];
 const namedFoodPaths=foodItems.flatMap(item=>numberedPaths(item.slug,REGULAR_MAX_PHOTOS));
-const vipPaths=Array.from({length:27},(_,i)=>`assets/food/vip-majlis-${String(i+1).padStart(2,'0')}.jpg`);
+const vipPaths=Array.from({length:30},(_,i)=>['jpg','jpeg','png','webp'].map(ext=>`assets/food/vip-majlis-${String(i+1).padStart(2,'0')}.${ext}`)).flat();
 
 async function buildGallery(){
   // Thumbnail covers are fixed assets so the gallery appears instantly.
@@ -353,7 +408,6 @@ async function ensureCollectionLoaded(c){
         const found=await existingFrom(paths);
         for(const src of found){if(!seen.has(src)){seen.add(src);items.push({src,label:item.name})}}
       }
-      if(!items.length) items.push({src:c.cover,label:'Hidangan'});
       galleryCache.food=items;
     }
     c.items=galleryCache.food;
@@ -390,31 +444,29 @@ document.querySelectorAll('.gallery-view-tab').forEach(btn=>btn.addEventListener
 async function openCollection(i){
   const c=galleryCollections[i];
   if(!c)return;
-
-  // Open instantly with the visible cover so the click never feels stuck.
-  const firstSrc=c.cover||c.coverCandidates?.[0];
-  galleryVisible=firstSrc?[{src:firstSrc,label:c.title}]:[];
+  galleryVisible=[];
   galleryIndex=0;
   galleryLightbox.classList.add('open');
   galleryLightbox.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
-  renderGalleryThumbs();
-  showGallery(c.title);
-
-  // Discover the remaining photos after the viewer is already open.
+  galleryLightboxImage.removeAttribute('src');
+  galleryLightboxImage.alt='';
+  galleryCaption.textContent='Memuatkan galeri…';
+  galleryThumbs.innerHTML='';
   const loaded=await ensureCollectionLoaded(c);
-  if(loaded.length){
-    galleryVisible=loaded;
-    const coverPos=loaded.findIndex(x=>x.src===c.cover);
-    galleryIndex=coverPos>=0?coverPos:0;
-    renderGalleryThumbs();
-    showGallery(c.title);
+  if(!loaded.length){
+    galleryCaption.textContent='Tiada foto dalam galeri ini';
+    return;
   }
+  galleryVisible=loaded;
+  galleryIndex=0;
+  renderGalleryThumbs();
+  showGallery();
 }
 const galleryLightbox=document.getElementById('galleryLightbox'),galleryLightboxImage=document.getElementById('galleryLightboxImage'),galleryCaption=document.getElementById('galleryCaption'),galleryThumbs=document.getElementById('galleryThumbs'),galleryProgress=document.getElementById('galleryProgress');
 function renderGalleryThumbs(){
   galleryThumbs.innerHTML=galleryVisible.map((item,i)=>`<button type="button" class="gallery-thumb${i===galleryIndex?' active':''}" data-thumb-index="${i}" aria-label="Buka foto ${i+1}"><img src="${item.src}" alt="" loading="lazy" decoding="async"></button>`).join('');
-  galleryThumbs.querySelectorAll('.gallery-thumb').forEach(btn=>btn.addEventListener('click',()=>{galleryIndex=Number(btn.dataset.thumbIndex);showGallery(galleryCaption.textContent)}));
+  galleryThumbs.querySelectorAll('.gallery-thumb').forEach(btn=>btn.addEventListener('click',()=>{galleryIndex=Number(btn.dataset.thumbIndex);showGallery()}));
   updateGalleryProgress();
 }
 function syncGalleryThumbs(){
@@ -424,8 +476,8 @@ function syncGalleryThumbs(){
   if(active) active.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
 }
 function updateGalleryProgress(){if(!galleryProgress)return;const bar=galleryProgress.querySelector('span');if(!bar)return;const total=Math.max(1,galleryVisible.length);bar.style.width=((galleryIndex+1)/total*100)+'%'}
-function showGallery(title){const item=galleryVisible[galleryIndex];if(!item)return;galleryLightboxImage.src=item.src;galleryLightboxImage.alt=item.label;galleryCaption.textContent=title||item.label;syncGalleryThumbs();updateGalleryProgress()}
-function moveGallery(step){if(!galleryVisible.length)return;galleryIndex=(galleryIndex+step+galleryVisible.length)%galleryVisible.length;showGallery(galleryCaption.textContent)}
+function showGallery(){const item=galleryVisible[galleryIndex];if(!item)return;galleryLightboxImage.src=item.src;galleryLightboxImage.alt=item.label;galleryCaption.textContent=item.label||'';syncGalleryThumbs();updateGalleryProgress()}
+function moveGallery(step){if(!galleryVisible.length)return;galleryIndex=(galleryIndex+step+galleryVisible.length)%galleryVisible.length;showGallery()}
 function closeGallery(){galleryLightbox.classList.remove('open');galleryLightbox.setAttribute('aria-hidden','true');galleryLightboxImage.src='';galleryThumbs.innerHTML='';if(galleryProgress)galleryProgress.querySelector('span').style.width='0';document.body.style.overflow=''}
 document.getElementById('galleryPrev').addEventListener('click',()=>moveGallery(-1));document.getElementById('galleryNext').addEventListener('click',()=>moveGallery(1));document.getElementById('galleryClose').addEventListener('click',closeGallery);galleryLightbox.addEventListener('click',e=>{if(e.target===galleryLightbox)closeGallery()});
 let galleryTouchX=0;galleryLightbox.addEventListener('touchstart',e=>{galleryTouchX=e.changedTouches[0].clientX},{passive:true});galleryLightbox.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-galleryTouchX;if(Math.abs(d)>45)moveGallery(d<0?1:-1)},{passive:true});
