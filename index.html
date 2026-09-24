@@ -387,6 +387,14 @@ async function buildGallery(){
     {key:'vip',title:'VIP',items:null,cover:'assets/vip.jpg',coverCandidates:['assets/vip.jpg'],klass:'float-b'}
   ];
   renderGalleryCategories('all');
+
+  // Warm the first real gallery images immediately so opening feels instant.
+  ['assets/food/jelatah-01.jpg','assets/food/vip-majlis-01.jpg'].forEach(src=>{const img=new Image();img.decoding='async';img.src=src});
+
+  // Discover the rest quietly when the browser is idle, not after the user clicks.
+  const warmCollections=()=>galleryCollections.forEach(c=>ensureCollectionLoaded(c));
+  if('requestIdleCallback' in window) requestIdleCallback(warmCollections,{timeout:1800});
+  else setTimeout(warmCollections,700);
 }
 
 async function ensureCollectionLoaded(c){
@@ -444,22 +452,25 @@ document.querySelectorAll('.gallery-view-tab').forEach(btn=>btn.addEventListener
 async function openCollection(i){
   const c=galleryCollections[i];
   if(!c)return;
-  galleryVisible=[];
   galleryIndex=0;
   galleryLightbox.classList.add('open');
   galleryLightbox.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
-  galleryLightboxImage.removeAttribute('src');
-  galleryLightboxImage.alt='';
-  galleryCaption.textContent='Memuatkan galeri…';
   galleryThumbs.innerHTML='';
+
+  // Show the first real gallery photo immediately; the cover thumbnail is never used inside.
+  const instant = c.key==='vip'
+    ? {src:'assets/food/vip-majlis-01.jpg',label:'VIP'}
+    : {src:'assets/food/jelatah-01.jpg',label:'Jelatah'};
+  galleryVisible=[instant];
+  showGallery();
+
+  // Use the already-warmed cache when available; otherwise finish discovery in the background.
   const loaded=await ensureCollectionLoaded(c);
-  if(!loaded.length){
-    galleryCaption.textContent='Tiada foto dalam galeri ini';
-    return;
-  }
+  if(!loaded.length) return;
   galleryVisible=loaded;
-  galleryIndex=0;
+  const same=loaded.findIndex(x=>x.src===instant.src);
+  galleryIndex=same>=0?same:0;
   renderGalleryThumbs();
   showGallery();
 }
